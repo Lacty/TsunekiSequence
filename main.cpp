@@ -4,21 +4,21 @@
 
 template<class T> class Sequence {
 public:
-  // typedefï¿½tï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½Sceneï¿½ï¿½ï¿½^ï¿½Æ‚ï¿½ï¿½Ä”Fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½->err
-  // <>ï¿½Å“nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½Ì’ï¿½ï¿½ÌŠÖï¿½ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½ì¬
+  // typedef•t‚¯‚È‚¢‚ÆScene‚ªŒ^‚Æ‚µ‚Ä”F¯‚³‚ê‚È‚¢->err
+  // <>‚Å“n‚³‚ê‚éƒNƒ‰ƒX‚Ì’†‚ÌŠÖ”‚Ìƒ|ƒCƒ“ƒ^‚ğì¬
   typedef void(T::*Scene)();
 
-  // ï¿½ï¿½ï¿½ï¿½ï¿½Å“nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½Ì’ï¿½ï¿½ÌŠÖï¿½ã¨ã—ã¦(now)ï¿½ï¿½ï¿½ï¿½ï¿½s
+  // ˆø”‚Å“n‚³‚ê‚éƒNƒ‰ƒX‚Ì’†‚ÌŠÖ”‚Æ‚µ‚Ä(now)‚ğÀs
   void exeAction(T* obj) {
     (obj->*now)();
-
-    // nowï¿½ï¿½ï¿½Ì‚ï¿½ï¿½Ì‚Ìï¿½ï¿½sï¿½ï¿½err
-    // 0 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½èï¿½ŞŠÖï¿½ï¿½É‚Í•]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½
+    
+    // now‚»‚Ì‚à‚Ì‚ÌÀs‚Íerr
+    // 0 ˆø”‚ğæ‚è‚ŞŠÖ”‚É‚Í•]‰¿‚³‚ê‚Ü‚¹‚ñ
     // now();
   }
 
-  // ï¿½ï¿½ï¿½ï¿½ï¿½Åó‚¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öï¿½ï¿½ï¿½nowï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½
-  // SceneManagerï¿½ÌƒRï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½titleï¿½ï¿½ï¿½wï¿½ï¿½
+  // ˆø”‚Åó‚¯æ‚Á‚½ŠÖ”‚ğnow‚É“ü‚ê‚é 
+  // SceneManager‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Åtitle‚ğw’è
   void changeAction(Scene sequence = nullptr) {
     now = sequence;
   }
@@ -29,8 +29,8 @@ private:
 
 class SceneManager {
 public:
-  // ï¿½Vï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½gï¿½ï¿½
-  // SceneManagerï¿½ï¿½ï¿½ï¿½ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  // ƒVƒ“ƒOƒ‹ƒgƒ“
+  // SceneManager‚ğˆê“x‚¾‚¯¶¬‚·‚é
   static SceneManager& getInstance() {
     static SceneManager manager;
     return manager;
@@ -38,12 +38,12 @@ public:
 
   void title();
 
-  // ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½Aï¿½Úsï¿½È‚Ç‚ï¿½ï¿½Ç—ï¿½ï¿½ï¿½ï¿½ï¿½
+  // ƒV[ƒ“‚ğÀsAˆÚs‚È‚Ç‚ğŠÇ—‚·‚é
   Sequence<SceneManager> sequence;
 
 private:
   SceneManager() {
-    // Pull Pathï¿½wï¿½è‚µï¿½È‚ï¿½ï¿½Æ‰ï¿½ï¿½zï¿½Öï¿½ï¿½ÌƒAï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ë‚¤ï¿½Æ‚ï¿½ï¿½ï¿½->err
+    // Pull Pathw’è‚µ‚È‚¢‚Æ‰¼‘zŠÖ”‚ÌƒAƒhƒŒƒX‚ğæ‚ë‚¤‚Æ‚·‚é->err
     sequence.changeAction(&SceneManager::title);
   }
 };
